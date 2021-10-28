@@ -20,5 +20,6 @@ from index import views as index_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('user.urls')),
-    path('index',index_views.index_view)
+    path('index',index_views.index_view),
+    path('cop/',include('copinfo.urls'))
 ]

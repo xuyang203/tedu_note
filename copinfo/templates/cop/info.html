@@ -1,0 +1,22 @@
+<head>
+    <title>
+        公司简介
+    </title>
+</head>
+<body>
+    <form action='/cop/info' method='post'>
+        <p>
+            公司名称：<input type='text' name='copname' value='{{cop.copname}}' >
+            <input type='submit' value='查询' >
+        </p>
+  </form>
+  <p>
+      {% if cop.copinfo %}
+      {{cop.copinfo}}
+      {% else %}
+      未找到结果
+      {% endif %}
+
+  </p>
+    
+</body>
