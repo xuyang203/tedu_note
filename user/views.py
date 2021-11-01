@@ -85,4 +85,8 @@ def logout_view(request):
     return response
     '''
     del request.session['username']
-    return HttpResponseRedirect('/index')
+
+   
+    response = HttpResponseRedirect('/index')
+    response.delete_cookie('username')
+    return response
