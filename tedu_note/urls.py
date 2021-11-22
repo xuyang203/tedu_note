@@ -17,9 +17,11 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from index import views as index_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('user.urls')),
     path('index',index_views.index_view),
-    path('cop/',include('copinfo.urls'))
+    path('cop/',include('copinfo.urls')),
+    path('home', index_views.home_view),
 ]

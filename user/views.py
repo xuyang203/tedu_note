@@ -4,10 +4,11 @@ from django.urls import exceptions
 from .models import User
 import hashlib
 # Create your views here.
+
 def reg_view(request):
     if request.method =='GET':
         
-        return render(request,'user/register.html')
+        return render(request,'user/reg.html')
     elif request.method =='POST':
         username = request.POST['username']
         password_1 = request.POST['password_1']
@@ -30,14 +31,14 @@ def reg_view(request):
         request.session['username'] = username
         request.session['uid'] = user.id
 
-        return HttpResponseRedirect('/index')
+        return HttpResponseRedirect('/home')
 
 
 def log_view(request):
     if request.method =='GET':
         if request.session.get('username') and request.session.get('uid'):
             #return HttpResponse('已登陆')
-            return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/home')
 
         c_username = request.COOKIES.get('username')
         c_uid = request.COOKIES.get('uid')
@@ -45,7 +46,7 @@ def log_view(request):
             request.session['username']=c_username
             request.session['uid']=c_uid
             #return HttpResponse('已登陆')
-            return HttpResponseRedirect('/index')
+            return HttpResponseRedirect('/home')
 
         return render(request,'user/log.html')
     elif request.method=='POST':
@@ -64,7 +65,7 @@ def log_view(request):
         request.session['username']=username
         request.session['uid']=user.id
 #       resp = HttpResponse('登录成功')
-        resp =  HttpResponseRedirect('/index')
+        resp =  HttpResponseRedirect('/home')
 
 
         if 'remember' in request.POST:

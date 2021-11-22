@@ -7,6 +7,7 @@ def info_view(request):
         return render(request,'cop/info.html')
     elif request.method=='POST':
         copname=request.POST['copname']
+        a=copname
         try:
             cop=Cop.objects.get(copname=copname)
         except Exception as e:

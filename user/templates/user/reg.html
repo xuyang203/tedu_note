@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Website Title -->
+    <title>Sign Up</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="/static/tedu_note/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/tedu_note/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/static/tedu_note/css/magnific-popup.css" rel="stylesheet">
+    <link href="/static/tedu_note/css/styles.css" rel="stylesheet">
+    <link href="/static/tedu_note/css/swiper.css" rel="stylesheet">
+
+    <link rel="icon" href="{% static 'tedu_note/images/favicon.png' %}">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="http://127.0.0.1:8000/home"><img
+                    src="{% static 'tedu_note/images/logo.svg' %}" alt="alternative"></a>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                </ul>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="http://127.0.0.1:8000/user/log">LOG IN</a>
+                </span>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+    <header id="header" class="ex-2-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Sign Up</h1>
+                    <p>Fill out the form below to sign up for Tivo. <br> Already signed up? Click Log In at top right.
+                    </p>
+                    <div class="form-container">
+                        <form action='/user/reg' method='post'>
+                            <div class="form-group">
+                                <!--用户名：<input type='text' name='username'> -->
+                                <input type="text" class="form-control-input" name="username">
+                                <label class="label-control" for="username">username</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="text" class="form-control-input" name="password_1">
+                                <label class="label-control" for="password_1">password</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control-input" name="password_2">
+                                <label class="label-control" for="password_2">confirm password</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">SIGN UP</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <script src="{% static 'tedu_note/js/jquery.min.js' %}"></script>
+                    <!-- jQuery for Bootstrap's JavaScript plugins -->
+                    <script src="{% static 'tedu_note/js/popper.min.js' %}"></script>
+                    <!-- Popper tooltip library for Bootstrap -->
+                    <script src="{% static 'tedu_note/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+                    <script src="{% static 'tedu_note/js/jquery.easing.min.js' %}"></script>
+                    <!-- jQuery Easing for smooth scrolling between anchors -->
+                    <script src="{% static 'tedu_note/js/swiper.min.js' %}"></script>
+                    <!-- Swiper for image and text sliders -->
+                    <script src="{% static 'tedu_note/js/jquery.magnific-popup.js' %}"></script>
+                    <!-- Magnific Popup for lightboxes -->
+                    <script src="{% static 'tedu_note/js/validator.min.js' %}"></script>
+                    <!-- Validator.js - Bootstrap plugin that validates forms -->
+                    <script src="{% static 'tedu_note/js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
