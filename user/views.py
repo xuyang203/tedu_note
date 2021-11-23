@@ -88,6 +88,6 @@ def logout_view(request):
     del request.session['username']
 
    
-    response = HttpResponseRedirect('/index')
+    response = HttpResponseRedirect('/home')
     response.delete_cookie('username')
     return response
