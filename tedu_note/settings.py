@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'user',
     'index',
     'copinfo',
-    'findata'
 ]
 
 MIDDLEWARE = [
