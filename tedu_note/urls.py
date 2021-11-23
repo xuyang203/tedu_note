@@ -24,4 +24,5 @@ urlpatterns = [
     path('index',index_views.index_view),
     path('cop/',include('copinfo.urls')),
     path('home', index_views.home_view),
+    path('fin/',include('findata.urls')),
 ]
